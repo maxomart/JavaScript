@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'poppins', sans-serif;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    left: 50%;
+    top: 50%;
+    background: #1f1b3b;
+    transition: background 0.5s ease;
+}
+
+
+body.original {
+    background: #1f1b3b;
+}
+
+
+body.clear{
+    background-image: url(/imagenes/clear-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body.cloudy {
+    background-image: url(/imagenes/clouds-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+
+body.rainy {
+    background-image: url(/imagenes/rain-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+body.snowy {
+    background-image: url(/imagenes/snow-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+body.hazy {
+    background-image: url(/imagenes/haze-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    position: relative;
+    background: #fff;
+    width: 400px;
+    height: 105px;
+    padding: 25px 30px;
+    overflow: hidden;
+    border-radius: 18px;
+    transition: 0.6s ease-out;
+}
+
+.buscados{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #909394;
+    border-radius: 50px;
+}
+
+.buscados input{
+    color: #000000;
+    width: 80%;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-left: 32px;
+}
+
+.buscados input::placeholder{
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    text-transform: capitalize;
+}
+
+.buscados button{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: #000000;
+    background: #909394;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+}
+
+.buscados button:hover{
+    background: #575858;
+}
+
+.clima{
+    text-align: center;
+}
+
+.clima img{
+    width: 60%;
+    margin-top: 30px;
+}
+
+.clima .temperatura{
+    position: relative;
+    color: #000000;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+}
+
+.clima .temperatura span{
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+
+.clima .descripcion{
+    color: #000000;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.climaDetalle{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.climaDetalle .humedad, .climaDetalle .viento{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+.climaDetalle .humedad{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+
+.climaDetalle .viento{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+
+.climaDetalle i{
+    color: #000000;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+.climaDetalle span{
+    color: #000000;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.climaDetalle p{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.noEncontrado{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    
+    display: none;
+}
+
+.noEncontrado img{
+    width: 70%;
+}
+
+.noEncontrado p{
+    color: #000000;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.clima, .climaDetalle{
+    scale: 0;
+    opacity: 0;
+}
+
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
